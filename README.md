@@ -1,5 +1,7 @@
 # Presence Sharing and Control System
 
+![Presence Hardware](https://github.com/henrypotgieter/presence_system/blob/main/device.png?raw=true)
+
 The purpose of this project is to enable a manually controlled presence
 notification system.  Best used in a work from home environment where you have
 a need to notify family members if you area available, busy or should not be
