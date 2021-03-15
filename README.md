@@ -28,6 +28,8 @@ single color LED's (Red, Green, Blue and Yellow) as well as an RGB LED that
 provide as outputs as well as some resistors and simple conductors to build the
 circuit.  Not very pretty but functional.
 
+![Circuit Up Close](https://github.com/henrypotgieter/presence_system/blob/main/closeup.png?raw=true)
+
 # File locations for Punchclock Pi
 
 The following files are located on the system in these locations, simply copy
