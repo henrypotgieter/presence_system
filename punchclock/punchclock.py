@@ -229,19 +229,27 @@ class busy_led:
 
     def check_status(self):
         """ Check the status of the notifier presence light and update vars """
+        # Record currently known dnd set value
+        current_dnd_set = self.dnd_set
         try:
             response2 = requests.get("http://" + NOTIFIER_IP, timeout=WEB_TIMEOUT)
             if 'class="status-dnd"' in response2.text:
                 self.rgb_red()
                 self.dnd_set = True
+                if current_dnd_set != self.dnd_set:
+                    self.file.write_dnd("yes")
                 self.busy_light_colour = "red"
             elif 'class="status-busy"' in response2.text:
                 self.rgb_yellow()
                 self.dnd_set = False
+                if current_dnd_set != self.dnd_set:
+                    self.file.write_dnd("no")
                 self.busy_light_colour = "yellow"
             elif 'class="status-free"' in response2.text:
                 self.rgb_green()
                 self.dnd_set = False
+                if current_dnd_set != self.dnd_set:
+                    self.file.write_dnd("no")
                 self.busy_light_colour = "green"
         except:
             print "Unable get data from webseriver at " + NOTIFIER_IP
