@@ -1,0 +1,1125 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "id": 13,
+  "links": [],
+  "panels": [
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {},
+          "decimals": 1,
+          "mappings": [],
+          "max": 1260,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 960
+              },
+              {
+                "color": "red",
+                "value": 1080
+              }
+            ]
+          },
+          "unit": "m"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.1",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "blue"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "GTT (BLUE)",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {},
+          "decimals": 1,
+          "mappings": [],
+          "max": 1260,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 960
+              },
+              {
+                "color": "red",
+                "value": 1080
+              }
+            ]
+          },
+          "unit": "m"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 4,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.1",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "green"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Off-Hours (GREEN)",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {},
+          "decimals": 1,
+          "mappings": [],
+          "max": 1260,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 960
+              },
+              {
+                "color": "red",
+                "value": 1080
+              }
+            ]
+          },
+          "unit": "m"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.1",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "red"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Personal Work (RED)",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-RdYlGr"
+          },
+          "custom": {},
+          "decimals": 1,
+          "mappings": [],
+          "max": 1260,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 960
+              },
+              {
+                "color": "red",
+                "value": 1080
+              }
+            ]
+          },
+          "unit": "m"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.1",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "yellow"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Development (YELLOW)",
+      "type": "gauge"
+    },
+    {
+      "aliasColors": {
+        "GTT": "dark-blue",
+        "Off": "dark-green",
+        "Off Hours": "dark-green",
+        "Other": "dark-red",
+        "Personal": "dark-red"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {},
+          "custom": {},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": []
+          },
+          "unit": "m"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 4,
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sort": "total",
+        "sortDesc": true,
+        "total": true,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.4.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [
+        {
+          "$$hashKey": "object:1278"
+        }
+      ],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "GTT",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "blue"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Dev",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "yellow"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Personal",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "red"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Off Hours",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "none"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "green"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Clock Time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:1289",
+          "decimals": 0,
+          "format": "m",
+          "label": "",
+          "logBase": 1,
+          "max": "1",
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:1290",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-BlYlRd"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 1080,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 960
+              }
+            ]
+          },
+          "unit": "m"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 14,
+        "x": 0,
+        "y": 13
+      },
+      "id": 8,
+      "options": {
+        "displayMode": "gradient",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {}
+      },
+      "pluginVersion": "7.4.1",
+      "targets": [
+        {
+          "alias": "GTT",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "blue"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "OffHours",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "green"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Personal",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "red"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        },
+        {
+          "alias": "Dev",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "hide": false,
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "yellow"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "sum"
+              },
+              {
+                "params": [],
+                "type": "cumulative_sum"
+              },
+              {
+                "params": [
+                  " / 6"
+                ],
+                "type": "math"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "Clock Bars",
+      "type": "bargauge"
+    },
+    {
+      "aliasColors": {
+        "work_status.mean": "dark-red"
+      },
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": null,
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {},
+          "custom": {},
+          "thresholds": {
+            "mode": "absolute",
+            "steps": []
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 3,
+      "gridPos": {
+        "h": 9,
+        "w": 10,
+        "x": 14,
+        "y": 13
+      },
+      "hiddenSeries": false,
+      "id": 9,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.4.1",
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "work_status",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "dnd"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "DND Status",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:2429",
+          "decimals": 0,
+          "format": "none",
+          "label": "",
+          "logBase": 1,
+          "max": "1",
+          "min": "0",
+          "show": true
+        },
+        {
+          "$$hashKey": "object:2430",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "refresh": "10s",
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now/d",
+    "to": "now/d"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "PunchClock",
+  "uid": "4jN7zsUMz",
+  "version": 11
+}

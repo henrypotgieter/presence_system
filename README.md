@@ -86,6 +86,13 @@ interface that lets you adjust the status output as you see fit.  This should
 also be the means by which the Punchclock device will control the output of the
 display.
 
+# Integrating with Grafana
+
+I provided a sample of my dashboard I built as dashboard.json, so you can check
+that out.  Here is what some sample output looks like:
+
+![Grafana Dashboard](https://github.com/henrypotgieter/presence_system/blob/main/dashboard.png?raw=true)
+
 # Code Provided As-Is
 
 This isn't perfect code, but it suits my needs, feel free to modify as you see
