@@ -1,0 +1,10 @@
+[Unit]
+Description=Punchclock App
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/punchclock.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
