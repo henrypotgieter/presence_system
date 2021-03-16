@@ -28,7 +28,7 @@ OUT_RGB_GREEN = 12
 OUT_RGB_BLUE = 19
 
 # Define IP of notifier/presence host and default http timeout
-NOTIFIER_IP = "192.168.1.17"
+NOTIFIER_IP = "0.0.0.0"
 WEB_TIMEOUT = 3
 
 # Define file names to use for state tracking
