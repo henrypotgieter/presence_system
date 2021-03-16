@@ -161,6 +161,7 @@ class busy_led:
 
     busy_light_colour = ""
     dnd_set = False
+    service_active = True
 
     def __init__(self):
         self.file = fileops()
@@ -173,8 +174,10 @@ class busy_led:
             response = requests.get(
                 "http://" + NOTIFIER_IP + "?red=1", timeout=WEB_TIMEOUT
             )
+            self.service_active = True
         except:
             print "Unable to communicate with webseriver at " + NOTIFIER_IP + " when setting DND to true"
+            self.service_active = False
 
     def busy_toggle(self):
         """ Toggle the busy led light status """
@@ -187,8 +190,10 @@ class busy_led:
                 self.rgb_yellow()
                 self.dnd_set = False
                 self.file.write_dnd("no")
+                self.service_active = True
             except:
                 print "Unable to communicate with webseriver at " + NOTIFIER_IP + " when setting DND to false"
+                self.service_active = False
         else:
             try:
                 response = requests.get(
@@ -197,8 +202,10 @@ class busy_led:
                 self.rgb_red()
                 self.dnd_set = True
                 self.file.write_dnd("yes")
+                self.service_active = True
             except:
                 print "Unable to communicate with webseriver at " + NOTIFIER_IP + " when setting DND to true"
+                self.service_active = False
 
     def rgb_red(self):
         """ Set rgb led to red """
@@ -227,12 +234,19 @@ class busy_led:
         pwm_green.ChangeDutyCycle(0)
         pwm_blue.ChangeDutyCycle(20)
 
+    def rgb_purlpe(self):
+        """ Set rgb led to purple """
+        pwm_red.ChangeDutyCycle(30)
+        pwm_green.ChangeDutyCycle(5)
+        pwm_blue.ChangeDutyCycle(2)
+
     def check_status(self):
         """ Check the status of the notifier presence light and update vars """
         # Record currently known dnd set value
         current_dnd_set = self.dnd_set
         try:
             response2 = requests.get("http://" + NOTIFIER_IP, timeout=WEB_TIMEOUT)
+            self.service_active = True
             if 'class="status-dnd"' in response2.text:
                 self.rgb_red()
                 self.dnd_set = True
@@ -253,6 +267,7 @@ class busy_led:
                 self.busy_light_colour = "green"
         except:
             print "Unable get data from webseriver at " + NOTIFIER_IP
+            self.service_active = False
 
 
 def main():
@@ -345,7 +360,10 @@ def main():
         # Put some cycling on the rgb led to flash between blue and the current
         # rgb busy light status color
         if loop_counter % 2 == 0 and loop_counter < 16:
-            busy_light.rgb_blue()
+            if busy_light.service_active == False:
+                busy_light.rgb_purlpe()
+            else:
+                busy_light.rgb_blue()
         if loop_counter % 4 == 0:
             if busy_light.busy_light_colour == "red":
                 busy_light.rgb_red()
