@@ -327,13 +327,13 @@ def main():
 
     # Initialize main loop, start the loop counter at 39 so the
     # initial status check happens fast
-    loop_counter = 39
+    loop_counter = 19
     while True:
         loop_counter += 1
-        # If we're at the 40th iteration reset and check the status
+        # If we're at the 20th iteration reset and check the status
         # from the notifier for busy indicator (in case another control
         # device/system changed it)
-        if loop_counter == 40:
+        if loop_counter == 20:
             loop_counter = 0
             busy_light.check_status()
 
