@@ -223,8 +223,8 @@ class busy_led:
 
     def rgb_yellow(self):
         """ Set rgb led to yellow """
-        pwm_red.ChangeDutyCycle(20)
-        pwm_green.ChangeDutyCycle(15)
+        pwm_red.ChangeDutyCycle(30)
+        pwm_green.ChangeDutyCycle(5)
         pwm_blue.ChangeDutyCycle(0)
         self.busy_light_colour = "yellow"
 
